@@ -1,0 +1,7 @@
+.primary {
+	background-color: #fd3636;
+}
+
+.primary * {
+	color: #fff;
+}
