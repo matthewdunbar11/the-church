@@ -9,6 +9,36 @@
 	</head>
 
 	<body>
+    <div id="widget-row-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-1-left-width', 4); ?>">
+            <?php dynamic_sidebar('header-1-left'); ?>
+          </div>
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-1-center-width', 4); ?>">
+            <?php dynamic_sidebar('header-1-center'); ?>
+          </div>
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-1-right-width', 4); ?>">
+            <?php dynamic_sidebar('header-1-right'); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="widget-row-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-2-left-width', 4); ?>">
+            <?php dynamic_sidebar('header-2-left'); ?>
+          </div>
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-2-center-width', 4); ?>">
+            <?php dynamic_sidebar('header-2-center'); ?>
+          </div>
+          <div class="col-xs-12 col-md-<?php echo get_theme_mod('header-2-right-width', 4); ?>">
+            <?php dynamic_sidebar('header-2-right'); ?>
+          </div>
+        </div>
+      </div>
+    </div>    
     <div class="primary full-width">
       <div class="container">
         <div class="row">
