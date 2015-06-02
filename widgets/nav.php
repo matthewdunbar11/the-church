@@ -19,7 +19,7 @@
 		 */
 		public function widget( $args, $instance ) {
 			?>
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default vertical-center-xs" role="navigation">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
