@@ -6,7 +6,7 @@
 	
 	<?php if(get_theme_mod('widget-row-' . $row_number . '-width') == 'full'): ?>
 		<div id="widget-row-<?php print $row_number; ?>" class="widget-row footer-widget-row">
-			<div class="container">
+			<div class="container<?php print get_theme_mod('widget-row-' . $row_number . '-container-width') == 'full' ? '-container' : ''; ?>">
 		<?php $endingdiv = '</div></div>'; ?>
 	<?php else: ?>
 	  	<div id="widget-row-<?php print $row_number; ?>" class="container widget-row header-widget-row">

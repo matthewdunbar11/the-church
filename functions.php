@@ -4,6 +4,7 @@ require_once('wp_bootstrap_navwalker.php');
 require_once('widgets/nav.php');
 require_once('widgets/site_title.php');
 require_once('widgets/logo.php');
+require_once('widgets/slider.php');
 
 class The_Church {
 
@@ -13,10 +14,10 @@ class The_Church {
 		add_action( 'widgets_init', array($this, 'widgets_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 		add_action( 'customize_register', array($this, 'customize_register' ) );
-		
+		add_action( 'after_setup_theme', array($this, 'after_setup_theme' ) );
 
 	}
-	
+		
 	function wp_head() {
 		?>
 			<style>
@@ -94,6 +95,7 @@ class The_Church {
 		register_widget( 'Bloggo_Nav' );
 		register_widget( 'Bloggo_Site_Title' );	
 		register_widget( 'Bloggo_Logo' );	
+		register_widget( 'Bloggo_Slider' );	
 	}
 	
 	function register_sidebar($name) {
@@ -107,6 +109,7 @@ class The_Church {
 	
 	function wp_enqueue_scripts() {
 		wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array( 'jquery' ), '3.3.4', true );
+		wp_enqueue_script( 'vertical-center', get_stylesheet_directory_uri() . '/js/vertical-center.js', array( 'jquery' ) );
 		
 		wp_enqueue_style( 'quicksand', 'http://fonts.googleapis.com/css?family=Quicksand:400,700' );
 		
@@ -119,6 +122,7 @@ class The_Church {
 		wp_enqueue_style( 'typography', get_stylesheet_directory_uri() . '/css/typography.css' );
 		wp_enqueue_style( 'color-settings', get_stylesheet_directory_uri() . '/css/colors.css' );
 		wp_enqueue_style( 'xs', get_stylesheet_directory_uri() . '/css/xs.css' );
+		wp_enqueue_style( 'md', get_stylesheet_directory_uri() . '/css/md.css' );
 	}
 	
 	function customize_register($wp_customize) {
@@ -137,6 +141,7 @@ class The_Church {
 		$easy_customizer->add_setting('Widget Row 1 Background Color', '#fff', 'Widget Row 1', 'color');
 		$easy_customizer->add_setting('Widget Row 1 Color', '#000', 'Widget Row 1', 'color');
 		$easy_customizer->add_setting('Widget Row 1 Width', 'full', 'Widget Row 1', 'text');
+		$easy_customizer->add_setting('Widget Row 1 Container Width', 'full', 'Widget Row 1', 'text');
 		$easy_customizer->add_setting('Header 1 Left Width', '4', 'Widget Row 1', 'text');
 		$easy_customizer->add_setting('Header 1 Center Width', '4', 'Widget Row 1', 'text');
 		$easy_customizer->add_setting('Header 1 Right Width', '4', 'Widget Row 1', 'text');
@@ -144,6 +149,7 @@ class The_Church {
 		$easy_customizer->add_setting('Widget Row 2 Background Color', '#fff', 'Widget Row 2', 'color');
 		$easy_customizer->add_setting('Widget Row 2 Color', '#000', 'Widget Row 2', 'color');
 		$easy_customizer->add_setting('Widget Row 2 Width', 'full', 'Widget Row 2', 'text');
+		$easy_customizer->add_setting('Widget Row 2 Container Width', 'full', 'Widget Row 2', 'text');
 		$easy_customizer->add_setting('Header 2 Left Width', '4', 'Widget Row 2', 'text');
 		$easy_customizer->add_setting('Header 2 Center Width', '4', 'Widget Row 2', 'text');
 		$easy_customizer->add_setting('Header 2 Right Width', '4', 'Widget Row 2', 'text');
@@ -151,6 +157,7 @@ class The_Church {
 		$easy_customizer->add_setting('Widget Row 3 Background Color', '#fff', 'Widget Row 3', 'color');
 		$easy_customizer->add_setting('Widget Row 3 Color', '#000', 'Widget Row 3', 'color');
 		$easy_customizer->add_setting('Widget Row 3 Width', 'full', 'Widget Row 3', 'text');
+		$easy_customizer->add_setting('Widget Row 3 Container Width', 'full', 'Widget Row 3', 'text');
 		$easy_customizer->add_setting('Header 3 Left Width', '4', 'Widget Row 3', 'text');
 		$easy_customizer->add_setting('Header 3 Center Width', '4', 'Widget Row 3', 'text');
 		$easy_customizer->add_setting('Header 3 Right Width', '4', 'Widget Row 3', 'text');
@@ -158,6 +165,7 @@ class The_Church {
 		$easy_customizer->add_setting('Footer Widget Row 1 Background Color', '#fff', 'Footer Widget Row 1', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 1 Color', '#000', 'Footer Widget Row 1', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 1 Width', 'full', 'Footer Widget Row 1', 'text');
+		$easy_customizer->add_setting('Footer Widget Row 1 Container Width', 'full', 'Footer Widget Row 1', 'text');
 		$easy_customizer->add_setting('Footer 1 Left Width', '4', 'Footer Widget Row 1', 'text');
 		$easy_customizer->add_setting('Footer 1 Center Width', '4', 'Footer Widget Row 1', 'text');
 		$easy_customizer->add_setting('Footer 1 Right Width', '4', 'Footer Widget Row 1', 'text');
@@ -165,6 +173,7 @@ class The_Church {
 		$easy_customizer->add_setting('Footer Widget Row 2 Background Color', '#fff', 'Footer Widget Row 2', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 2 Color', '#000', 'Footer Widget Row 2', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 2 Width', 'full', 'Footer Widget Row 2', 'text');
+		$easy_customizer->add_setting('Footer Widget Row 2 Container Width', 'full', 'Footer Widget Row 2', 'text');
 		$easy_customizer->add_setting('Footer 2 Left Width', '4', 'Footer Widget Row 2', 'text');
 		$easy_customizer->add_setting('Footer 2 Center Width', '4', 'Footer Widget Row 2', 'text');
 		$easy_customizer->add_setting('Footer 2 Right Width', '4', 'Footer Widget Row 2', 'text');	
@@ -172,11 +181,15 @@ class The_Church {
 		$easy_customizer->add_setting('Footer Widget Row 3 Background Color', '#fff', 'Footer Widget Row 3', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 3 Color', '#000', 'Footer Widget Row 3', 'color');
 		$easy_customizer->add_setting('Footer Widget Row 3 Width', 'full', 'Footer Widget Row 3', 'text');
+		$easy_customizer->add_setting('Footer Widget Row 3 Container Width', 'full', 'Footer Widget Row 3', 'text');
 		$easy_customizer->add_setting('Footer 3 Left Width', '4', 'Footer Widget Row 3', 'text');
 		$easy_customizer->add_setting('Footer 3 Center Width', '4', 'Footer Widget Row 3', 'text');
 		$easy_customizer->add_setting('Footer 3 Right Width', '4', 'Footer Widget Row 3', 'text');						
 	}
-
+	
+	function after_setup_theme() {
+		add_theme_support( 'post-thumbnails' );	
+	}
 }
 new The_Church();
 

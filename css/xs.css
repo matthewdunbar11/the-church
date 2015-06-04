@@ -9,6 +9,20 @@
 
 .vertical-center-xs {
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+}
+.vertical-center-md, .vertical-center-lg, .vertical-center-xl {
+	position: static;
+}
+
+#carousel-banner {
+	margin-top: -16px;
+	margin-left: -15px;
+}
+
+#carousel-banner .item {
+	max-height: 400px;
+}
+
+#carousel-banner img {
+	width: 100%;
 }

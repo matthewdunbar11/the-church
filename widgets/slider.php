@@ -1,14 +1,14 @@
 <?php
-	class Bloggo_Logo extends WP_Widget {
+	class Bloggo_Slider extends WP_Widget {
 		/**
 		 * Sets up the widgets name etc
 		 */
 		public function __construct() {
 			parent::__construct(
-				'bloggo_logo', // Base ID
-				__( 'Logo', 'text_domain' ), // Name
+				'bloggo_slider', // Base ID
+				__( 'Slider', 'text_domain' ), // Name
 				array( 
-					'description' => __( 'Logo' ), 
+					'description' => __( 'Slider' ), 
 				) // Args
 				
 			);
@@ -21,12 +21,7 @@
 		 * @param array $instance
 		 */
 		public function widget( $args, $instance ) {
-			echo $args['before_widget'];
-			//error_log(print_r(get_theme_mod('logo'), true));
-			echo '<div class="text-center">';
-			echo $instance['before-tag'] . '<img src="' . get_theme_mod('logo') . '" />' . $instance['after-tag'];
-			echo '</div>';
-			echo $args['after_widget'];
+			echo do_shortcode('[display_flexslider]');
 		}
 	
 		/**
@@ -35,8 +30,7 @@
 		 * @param array $instance The widget options
 		 */
 		public function form( $instance ) {
-			$this->add_setting_field($instance, 'Before Tag');			
-			$this->add_setting_field($instance, 'After Tag');
+
 		}
 	
 		/**
@@ -47,11 +41,8 @@
 		 */
 		public function update( $new_instance, $old_instance ) {
 			
-			$instance = array();
-			$instance['before-tag'] =  $new_instance['before-tag'];			
-			$instance['after-tag'] = $new_instance['after-tag'];
 
-			return $instance;
+			return $new_instance;
 		}
 		
 		private function add_setting_field($instance, $title, $default_value = '') {
