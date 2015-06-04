@@ -1,0 +1,10 @@
+@media (min-width: 992px) { 
+	
+	.vertical-center-md {
+		position: relative;
+	}
+		
+	#carousel-banner .item {
+		max-height: 400px;
+	}	
+}
