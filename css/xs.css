@@ -1,0 +1,28 @@
+.widget_bloggo_logo img {
+	max-width: 100%;
+}
+
+.widget-row {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.vertical-center-xs {
+	position: relative;
+}
+.vertical-center-md, .vertical-center-lg, .vertical-center-xl {
+	position: static;
+}
+
+#carousel-banner {
+	margin-top: -16px;
+	margin-left: -15px;
+}
+
+#carousel-banner .item {
+	max-height: 400px;
+}
+
+#carousel-banner img {
+	width: 100%;
+}
