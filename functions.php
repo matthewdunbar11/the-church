@@ -5,6 +5,7 @@ require_once('widgets/nav.php');
 require_once('widgets/site_title.php');
 require_once('widgets/logo.php');
 require_once('widgets/slider.php');
+require_once('widgets/social_icons.php');
 
 class The_Church {
 
@@ -96,6 +97,7 @@ class The_Church {
 		register_widget( 'Bloggo_Site_Title' );	
 		register_widget( 'Bloggo_Logo' );	
 		register_widget( 'Bloggo_Slider' );	
+		register_widget( 'Bloggo_Social_Icons' );	
 	}
 	
 	function register_sidebar($name) {
@@ -111,7 +113,8 @@ class The_Church {
 		wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array( 'jquery' ), '3.3.4', true );
 		wp_enqueue_script( 'vertical-center', get_stylesheet_directory_uri() . '/js/vertical-center.js', array( 'jquery' ) );
 		
-		wp_enqueue_style( 'quicksand', 'http://fonts.googleapis.com/css?family=Quicksand:400,700' );
+		wp_enqueue_style( 'quicksand', '//fonts.googleapis.com/css?family=Quicksand:400,700' );
+		wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 		
 		wp_enqueue_style( sanitize_title(get_theme_mod('header-web-font-name')), get_theme_mod('header-web-font-url') );
 		wp_enqueue_style( sanitize_title(get_theme_mod('body-web-font-name')), get_theme_mod('body-web-font-url') );
