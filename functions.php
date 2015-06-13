@@ -25,31 +25,31 @@ class The_Church {
 				body {
 					background-color: <?php echo get_theme_mod('page-background-color', '#fff'); ?>;
 				}
-				main, main * {
+				main {
 					background-color: <?php echo get_theme_mod('main-container-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('main-container-color', '#000'); ?>;
 				}
-				#widget-row-1, #widget-row-1 * {
+				#widget-row-1 {
 					background-color: <?php echo get_theme_mod('widget-row-1-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('widget-row-1-color', '#000'); ?>;
 				}
-				#widget-row-2, #widget-row-2 * {
+				#widget-row-2 {
 					background-color: <?php echo get_theme_mod('widget-row-2-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('widget-row-2-color', '#000'); ?>;
 				}	
-				#widget-row-3, #widget-row-3 * {
+				#widget-row-3 {
 					background-color: <?php echo get_theme_mod('widget-row-3-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('widget-row-3-color', '#000'); ?>;
 				}			
-				#footer-widget-row-1, #footer-widget-row-1 * {
+				#footer-widget-row-1 {
 					background-color: <?php echo get_theme_mod('footer-widget-row-1-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('footer-widget-row-1-color', '#000'); ?>;
 				}
-				#footer-widget-row-2, #footer-widget-row-2 * {
+				#footer-widget-row-2 {
 					background-color: <?php echo get_theme_mod('footer-widget-row-2-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('footer-widget-row-2-color', '#000'); ?>;
 				}	
-				#footer-widget-row-3, #footer-widget-row-3 * {
+				#footer-widget-row-3 {
 					background-color: <?php echo get_theme_mod('footer-widget-row-3-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('footer-widget-row-3-color', '#000'); ?>;
 				}	
