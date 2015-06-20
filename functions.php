@@ -56,7 +56,7 @@ class The_Church {
 					background-color: <?php echo get_theme_mod('footer-widget-row-3-background-color', '#fff'); ?>;
 					color:  <?php echo get_theme_mod('footer-widget-row-3-color', '#000'); ?>;
 				}	
-				html * {
+				html, div > *, p > * {
 					font-family: "<?php echo get_theme_mod('body-web-font-name'); ?>";
 				}				
 				h1, h2, h3, h4, h5, h6, h7 {
