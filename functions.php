@@ -7,6 +7,8 @@ require_once('widgets/logo.php');
 require_once('widgets/slider.php');
 require_once('widgets/social_icons.php');
 
+require_once('shortcodes/current-year.php');
+
 class The_Church {
 
 	function __construct() {
@@ -16,7 +18,8 @@ class The_Church {
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 		add_action( 'customize_register', array($this, 'customize_register' ) );
 		add_action( 'after_setup_theme', array($this, 'after_setup_theme' ) );
-		add_filter('widget_text', 'do_shortcode');
+		add_filter( 'widget_text', 'do_shortcode' );
+		add_shortcode( 'current-year', 'bloggo_current_year' );
 	}
 		
 	function wp_head() {
