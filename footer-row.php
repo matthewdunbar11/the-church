@@ -14,15 +14,21 @@
 		<?php $endingdiv = '</div>'; ?>
 	<?php endif; ?>
 			<div class="row">
+				<?php if(get_theme_mod('footer-' . $row_number . '-left-width', 4) > 0): ?>								
 				<div class="col-xs-12 col-md-<?php echo get_theme_mod('footer-' . $row_number . '-left-width', 4); ?>">
 					<?php dynamic_sidebar('footer-' . $row_number . '-left'); ?>
 				</div>
+				<?php endif; ?>
+				<?php if(get_theme_mod('footer-' . $row_number . '-center-width', 4) > 0): ?>				
 				<div class="col-xs-12 col-md-<?php echo get_theme_mod('footer-' . $row_number . '-center-width', 4); ?>">
 					<?php dynamic_sidebar('footer-' . $row_number . '-center'); ?>
 				</div>
+				<?php endif; ?>
+				<?php if(get_theme_mod('footer-' . $row_number . '-right-width', 4) > 0): ?>				
 				<div class="col-xs-12 col-md-<?php echo get_theme_mod('footer-' . $row_number . '-right-width', 4); ?>">
 					<?php dynamic_sidebar('footer-' . $row_number . '-right'); ?>
 				</div>
+				<?php endif; ?>
 			</div>
 	<?php print $endingdiv; ?>
 
