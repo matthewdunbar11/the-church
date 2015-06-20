@@ -275,3 +275,24 @@ class Easy_Customizer {
 		}		
 	}
 }
+
+
+function my_theme_update_handler( EUAPI_Handler $handler = null, EUAPI_Item_Theme $item ) {
+
+    if ( 'the-church/style.css' == $item->file ) {
+
+        $handler = new EUAPI_Handler_GitHub( array(
+            'type'       => $item->type,
+            'file'       => $item->file,
+            'github_url' => 'https://github.com/matthewdunbar11/the-church',
+            'http'       => array(
+                'sslverify' => false,
+            ),
+        ) );
+
+    }
+
+    return $handler;
+
+}
+add_filter( 'euapi_theme_handler', 'my_theme_update_handler', 10, 2 );
