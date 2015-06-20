@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, .nav * {
+h1, h2, h3, h4, h5, h6, h7, .nav * {
 	font-family: 'Quicksand';
 	font-weight: 700;
 }
@@ -21,4 +21,9 @@ h1.skinny, h2.skinny, h3.skinny, h4.skinny, h5.skinny {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	color: #fd3636 !important;
   	background-color: #fff;
+}
+
+a {
+	color: inherit;
+	font-family: inherit;
 }
