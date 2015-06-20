@@ -285,6 +285,7 @@ function my_theme_update_handler( EUAPI_Handler $handler = null, EUAPI_Item_Them
             'type'       => $item->type,
             'file'       => $item->file,
             'github_url' => 'https://github.com/matthewdunbar11/the-church',
+			'access_token' => '1977b7c7c78f61021019caa7347aea478d2161f4',
             'http'       => array(
                 'sslverify' => false,
             ),
