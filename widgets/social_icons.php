@@ -22,7 +22,7 @@
 		 */
 		public function widget( $args, $instance ) {
 			echo $args['before_widget'];			
-			echo '<div class="text-center">';
+			echo '<div class="text-right">';
 
 			echo $instance['facebook-url'] <> '' ? '<a class="social-icon" href="' . $instance['facebook-url'] . '"><i class="fa fa-facebook fa-2x"></i></a>' : '';
 			echo $instance['twitter-url'] <> '' ? '<a class="social-icon" href="' . $instance['twitter-url'] . '"><i class="fa fa-twitter fa-2x"></i></a>' : '';
