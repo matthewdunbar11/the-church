@@ -279,7 +279,7 @@ class Easy_Customizer {
 
 function my_theme_update_handler( EUAPI_Handler $handler = null, EUAPI_Item_Theme $item ) {
 
-    if ( 'the-church/style.css' == $item->file ) {
+    if ( 'the-church' == $item->file ) {
 
         $handler = new EUAPI_Handler_GitHub( array(
             'type'       => $item->type,
