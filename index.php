@@ -23,11 +23,13 @@
 				dynamic_sidebar('pre-content');
 				
 				if ( have_posts() ) {
+					echo '<div id="main">';
 					while ( have_posts() ) {
 						the_post(); 
 						the_title('<h1>', '</h1>');
 						the_content();
 					} // end while
+					echo '</div>';
 				} // end if
 				
 				dynamic_sidebar('post-content');
