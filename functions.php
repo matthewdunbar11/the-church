@@ -249,7 +249,7 @@ class Easy_Customizer {
 					$this->wp_customize,
 					sanitize_title($name),
 					array(
-						'label', => __($name),
+						'label' => __($name),
 						'section' => sanitize_title($section),
 						'settings' => sanitize_title($name)
 					)
