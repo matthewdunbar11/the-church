@@ -10,6 +10,7 @@ require_once('widgets/social_icons.php');
 require_once('shortcodes/current-year.php');
 
 include_once('plugins/bootstrap-ninja-forms/bootstrap-ninja-forms.php');
+include_once('Text_Area_Custom_Control.php');
 
 class The_Church {
 
@@ -137,7 +138,7 @@ class The_Church {
 	function customize_register($wp_customize) {
 		$easy_customizer = new Easy_Customizer($wp_customize);
 
-		$easy_customizer->add_setting('Custom CSS', '', 'CSS', 'text');
+		$easy_customizer->add_setting('Custom CSS', '', 'CSS', 'textarea');
 		
 		$easy_customizer->add_setting('Page Background Color', '#fff', 'Colors', 'color');
 		$easy_customizer->add_setting('Main Container Background Color', '#fff', 'Colors', 'color');
@@ -243,6 +244,16 @@ class Easy_Customizer {
 					)
 				));
 				break;
+			case 'textarea':
+				$this->wp_customize->add_control(new Textarea_Custom_Control(
+					$this->wp_customize,
+					sanitize_title($name),
+					array(
+						'label', => __($name),
+						'section' => sanitize_title($section),
+						'settings' => sanitize_title($name)
+					)
+				));
 			case 'color':
 				$this->wp_customize->add_control(new WP_Customize_Color_Control(
 					$this->wp_customize,
