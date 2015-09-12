@@ -65,7 +65,7 @@ class The_Church {
 				h1, h2, h3, h4, h5, h6, h7 {
 					font-family: "<?php echo get_theme_mod('header-web-font-name'); ?>";
 				}						
-
+				<?php echo get_theme_mod('custom-css'); ?>
 			</style>
 		<?php	
 		
@@ -136,6 +136,8 @@ class The_Church {
 	
 	function customize_register($wp_customize) {
 		$easy_customizer = new Easy_Customizer($wp_customize);
+
+		$easy_customizer->add_setting('Custom CSS', '', 'CSS', 'text');
 		
 		$easy_customizer->add_setting('Page Background Color', '#fff', 'Colors', 'color');
 		$easy_customizer->add_setting('Main Container Background Color', '#fff', 'Colors', 'color');
