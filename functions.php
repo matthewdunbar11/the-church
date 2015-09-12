@@ -254,6 +254,7 @@ class Easy_Customizer {
 						'settings' => sanitize_title($name)
 					)
 				));
+				break;
 			case 'color':
 				$this->wp_customize->add_control(new WP_Customize_Color_Control(
 					$this->wp_customize,
