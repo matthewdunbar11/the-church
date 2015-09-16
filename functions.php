@@ -68,6 +68,14 @@ class The_Church {
 				}						
 				<?php echo get_theme_mod('custom-css'); ?>
 			</style>
+
+			<script>
+				(function($) {
+					$(document).ready(function() {
+						<?php echo get_theme_mod('custom-js'); ?>
+					});
+				})(jQuery);
+			</script>
 		<?php	
 		
 	}
@@ -138,7 +146,8 @@ class The_Church {
 	function customize_register($wp_customize) {
 		$easy_customizer = new Easy_Customizer($wp_customize);
 
-		$easy_customizer->add_setting('Custom CSS', '', 'CSS', 'textarea');
+		$easy_customizer->add_setting('Custom CSS', '', 'Custom', 'textarea');
+		$easy_customizer->add_setting('Custom JS', '', 'Custom', 'textarea');
 		
 		$easy_customizer->add_setting('Page Background Color', '#fff', 'Colors', 'color');
 		$easy_customizer->add_setting('Main Container Background Color', '#fff', 'Colors', 'color');
